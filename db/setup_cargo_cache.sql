@@ -1,6 +1,11 @@
 -- Set Up Database
 DROP DATABASE IF EXISTS cargocache;
 CREATE DATABASE cargocache;
+
+-- Give ALL priveleges to Flask app
+grant all privileges on cargocache.* to 'webapp'@'%';
+flush privileges;
+
 USE cargocache;
 
 -- Create Tables
