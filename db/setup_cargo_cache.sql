@@ -42,7 +42,7 @@ CREATE TABLE Units
     State               CHAR(2)       NOT NULL,
     -- 5-digit zip
     Zip                 CHAR(5)       NOT NULL,
-    UnitNumber          INT           NOT NULL,
+    UnitNumber          VARCHAR(10)   NOT NULL,
     PrimaryAccountEmail VARCHAR(100)  NOT NULL,
     Name                VARCHAR(20),
     Description         MEDIUMTEXT,
@@ -58,7 +58,9 @@ CREATE TABLE UnitPictures
 (
     UnitID    INT        NOT NULL,
     PictureID INT UNIQUE NOT NULL AUTO_INCREMENT,
-    Picture   BLOB       NOT NULL,
+    -- TODO: Can or *Should* we include this in testing, mockaroo can't generate data
+    -- and adding a bunch of binary data will slow it down a lot...
+    -- Picture   BLOB       NOT NULL,
     PRIMARY KEY (UnitID, PictureID),
     CONSTRAINT fk_unitpictures_units FOREIGN KEY (UnitID) REFERENCES Units (UnitID) ON DELETE CASCADE ON UPDATE CASCADE
 );
