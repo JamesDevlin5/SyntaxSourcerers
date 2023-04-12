@@ -136,6 +136,3 @@ CREATE TABLE Leases
     CONSTRAINT fk_leases_renters FOREIGN KEY (AccountEmail) REFERENCES Renters (AccountEmail) ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT fk_leases_terms FOREIGN KEY (TermsID) REFERENCES Terms (TermsID) ON DELETE RESTRICT ON UPDATE CASCADE
 );
-
--- Mock Data
--- TODO: On Mockaroo
