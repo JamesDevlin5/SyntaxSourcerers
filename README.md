@@ -1,20 +1,29 @@
-# MySQL + Flask Boilerplate Project
+# The Campus Cache
 
-This repo contains a boilerplate setup for spinning up 3 Docker containers: 
-1. A MySQL 8 container for obvious reasons
-1. A Python Flask container to implement a REST API
-1. A Local AppSmith Server
+TODO: link to video showing usage
+
+
+This repo contains our full-stack application, composed of three Docker containers:
+
+1. A MySQL 8 container for hosting our data
+1. A Python Flask container which implements a REST API
+1. A Local AppSmith Server which offers an extensive UI and interacts with the
+   Flask container
+
+## Overview
+
+An Air BnB-type situation specific to storage space for students. Many students leave
+campus or temporarily don’t have housing over a break and need somewhere to store their
+belongings. Other students may have surplus space but cannot rent it out to a person for
+one reason or another. Our service connects these two groups of people, allowing the
+space owners to make money and offering the renters a safe place to leave their things.
 
 ## How to setup and start the containers
-**Important** - you need Docker Desktop installed
 
-1. Clone this repository.  
-1. Create a file named `db_root_password.txt` in the `secrets/` folder and put inside of it the root password for MySQL. 
-1. Create a file named `db_password.txt` in the `secrets/` folder and put inside of it the password you want to use for the a non-root user named webapp. 
-1. In a terminal or command prompt, navigate to the folder with the `docker-compose.yml` file.  
-1. Build the images with `docker compose build`
-1. Start the containers with `docker compose up`.  To run in detached mode, run `docker compose up -d`. 
+Just run `docker compose up` in the root directory of this project to spin up
+the Database, Flask, and AppSmith containers. Once initialized, we may open
+a web browser and navigate to AppSmith at the URL `localhost:8080/`.
 
-
+TODO: finish this ...
 
 
