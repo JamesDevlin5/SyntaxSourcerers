@@ -18,10 +18,10 @@ def _run_and_respond(query):
     return response
 
 
-blueprint = Blueprint("sellers", __name__)
+sellers = Blueprint("sellers", __name__)
 
 
-@blueprint.route("/listings/<email>", methods=["GET"])
+@sellers.route("/listings/<email>", methods=["GET"])
 def get_listings(email):
     """Gets all the unit listings associated with the owner's Email"""
     # NOTE: offer choice to select a specific unit from this list
@@ -30,7 +30,7 @@ def get_listings(email):
     )
 
 
-@blueprint.route("/listings/<email>", methods=["POST"])
+@sellers.route("/listings/<email>", methods=["POST"])
 def new_unit_listing(email):
     """Creates a new advertisement for a unit being sold by the user"""
     # NOTE: currently, all optional fields are required
@@ -41,23 +41,25 @@ def new_unit_listing(email):
     unit_num = form["unitNumber"]
     name = form["name"]
     description = form["description"]
+    # Price is of the form ######.## (a number w/ 2 decimal points)
     price = form["price"]
+    # Size is of the form ######.### (a number w/ 3 decimal points)
     size = form["size"]
     return _run_and_respond(
         f"""
         INSERT INTO Units (City,State,Zip,UnitNumber,PrimaryAccountEmail,Name,Description,ListedPrice,Size)
-        VALUES ({city}, {state}, {zipcode}, {unit_num}, {email}, {name}, {description}, {price}, {size});
+        VALUES ('{city}', '{state}', {zipcode}, {unit_num}, '{email}', '{name}', '{description}', {price}, {size});
         """
     )
 
 
-@blueprint.route("/listings/<int:unitID>", methods=["GET"])
+@sellers.route("/listings/<int:unitID>", methods=["GET"])
 def get_unit_listing(unitID):
     """Gets detailed information about one specific unit"""
     return _run_and_respond(f"SELECT * FROM Units WHERE UnitID = {unitID};")
 
 
-@blueprint.route("/listings/<int:unitID>", methods=["PUT"])
+@sellers.route("/listings/<int:unitID>", methods=["PUT"])
 def set_unit_price(unitID):
     """Change the price for the specific unit
 
@@ -68,7 +70,7 @@ def set_unit_price(unitID):
     )
 
 
-@blueprint.route("/listings/<int:unitID>", methods=["PUT"])
+@sellers.route("/listings/<int:unitID>", methods=["PUT"])
 def set_unit_size(unitID):
     """Change the size (in square ft, with 3 decimal points) for the specific unit
 
@@ -79,7 +81,7 @@ def set_unit_size(unitID):
     )
 
 
-@blueprint.route("/listings/<int:unitID>/pictures", methods=["GET"])
+@sellers.route("/listings/<int:unitID>/pictures", methods=["GET"])
 def get_unit_pictures(unitID):
     """Gets all pictures associated with this unit"""
     return _run_and_respond(
@@ -87,7 +89,7 @@ def get_unit_pictures(unitID):
     )
 
 
-@blueprint.route("/listings/<int:unitID>/pictures", methods=["POST"])
+@sellers.route("/listings/<int:unitID>/pictures", methods=["POST"])
 def add_unit_picture(unitID):
     """Adds a new picture to a specific unit being sold by this seller
 
@@ -101,7 +103,7 @@ def add_unit_picture(unitID):
     )
 
 
-@blueprint.route(
+@sellers.route(
     "/listings/<int:unitID>/pictures/<int:picID>", methods=["DELETE"]
 )
 def rm_unit_picture(unitID, picID):
@@ -111,12 +113,12 @@ def rm_unit_picture(unitID, picID):
     )
 
 
-@blueprint.route("/listings/<int:unitID>/attributes", methods=["GET"])
+@sellers.route("/listings/<int:unitID>/attributes", methods=["GET"])
 def get_unit_attributes(unitID):
     """Gets all attributes associated with this unit"""
     return _run_and_respond(
         f"""
-        SELECT DISTINCT Attributes.Name AS "Name", Attributes.Description AS "Description"
+        SELECT DISTINCT Attributes.Name AS 'Name', Attributes.Description AS 'Description'
         FROM Attributes
         JOIN AttributeUnit ON Attributes.Name = AttributeUnit.AttributeName
         JOIN Units USING (UnitID)
