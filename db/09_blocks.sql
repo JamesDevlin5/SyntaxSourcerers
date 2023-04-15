@@ -397,4 +397,4 @@ INSERT INTO Blocks(AccountEmail,BlockedEmail) VALUES ('cmilleryn8@over-blog.com'
 INSERT INTO Blocks(AccountEmail,BlockedEmail) VALUES ('jdwyer3l@forbes.com','reasthamke@blogtalkradio.com');
 INSERT INTO Blocks(AccountEmail,BlockedEmail) VALUES ('sfatherk@dropbox.com','uelliker7q@moonfruit.com');
 INSERT INTO Blocks(AccountEmail,BlockedEmail) VALUES ('nfidaliw@live.com','fcurry71@godaddy.com');
-INSERT INTO Blocks(AccountEmail,BlockedEmail) VALUES ('ejacobowitz8t@eepurl.com','hlethebridgel6@histats.com');
+-- INSERT INTO Blocks(AccountEmail,BlockedEmail) VALUES ('ejacobowitz8t@eepurl.com','hlethebridgel6@histats.com');

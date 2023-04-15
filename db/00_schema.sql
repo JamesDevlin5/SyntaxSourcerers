@@ -3,8 +3,8 @@ DROP DATABASE IF EXISTS cargocache;
 CREATE DATABASE cargocache;
 
 -- Give ALL priveleges to Flask app
-grant all privileges on cargocache.* to 'webapp'@'%';
-flush privileges;
+-- grant all privileges on cargocache.* to 'webapp'@'%';
+-- flush privileges;
 
 USE cargocache;
 
@@ -76,7 +76,7 @@ CREATE TABLE CoRenteeUnits
 
 CREATE TABLE Attributes
 (
-    Name        VARCHAR(20) NOT NULL,
+    Name        VARCHAR(40) NOT NULL,
     Description MEDIUMTEXT,
     PRIMARY KEY (Name)
 );
@@ -84,7 +84,7 @@ CREATE TABLE Attributes
 CREATE TABLE AttributeUnit
 (
     UnitID        INT         NOT NULL,
-    AttributeName VARCHAR(20) NOT NULL,
+    AttributeName VARCHAR(40) NOT NULL,
     PRIMARY KEY (UnitID, AttributeName),
     CONSTRAINT fk_attrunit_units FOREIGN KEY (UnitID) REFERENCES Units (UnitID) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT fk_attrunit_attrs FOREIGN KEY (AttributeName) REFERENCES Attributes (Name) ON DELETE CASCADE ON UPDATE CASCADE
