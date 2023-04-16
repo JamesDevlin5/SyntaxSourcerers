@@ -21,6 +21,7 @@ CREATE TABLE Accounts
     State     CHAR(2)             NOT NULL,
     Zip       CHAR(5)             NOT NULL,
     Phone     VARCHAR(12)         NOT NULL,
+    Banned    BIT,
     PRIMARY KEY (Email)
 );
 
