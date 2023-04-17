@@ -1,3 +1,4 @@
+USE cargocache;
 INSERT INTO Terms(StartDate,EndDate,Price) VALUES ('2023-02-08','2025-09-17',99017.41);
 INSERT INTO Terms(StartDate,EndDate,Price) VALUES ('2023-03-15','2026-10-05',53654.69);
 INSERT INTO Terms(StartDate,EndDate,Price) VALUES ('2022-10-04','2026-03-24',71528.72);

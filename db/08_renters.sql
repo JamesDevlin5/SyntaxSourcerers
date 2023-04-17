@@ -1,3 +1,4 @@
+USE cargocache;
 INSERT INTO Renters(AccountEmail,CreditCardNumber,CreditCardInfo,ExpiryDate) VALUES ('rspancock0@slate.com','5108755983128389',205,'2024-05-08');
 INSERT INTO Renters(AccountEmail,CreditCardNumber,CreditCardInfo,ExpiryDate) VALUES ('ematushevich1@tinyurl.com','5048376575207672',955,'2024-08-13');
 INSERT INTO Renters(AccountEmail,CreditCardNumber,CreditCardInfo,ExpiryDate) VALUES ('ciczokvitz2@discuz.net','5048370004041885',395,'2023-11-05');

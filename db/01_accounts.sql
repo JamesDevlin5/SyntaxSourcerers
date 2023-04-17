@@ -1,3 +1,4 @@
+USE cargocache;
 INSERT INTO Accounts(Email,Password,FirstName,LastName,City,State,Zip,Phone,Banned) VALUES ('rspancock0@slate.com','3YD0ub9v','Rivy','Spancock','Columbia','SC','29220','803-204-7494',0);
 INSERT INTO Accounts(Email,Password,FirstName,LastName,City,State,Zip,Phone,Banned) VALUES ('ematushevich1@tinyurl.com','PKs9VP5exmwD','Ethan','Matushevich','Fort Lauderdale','FL','33325','954-725-9984',0);
 INSERT INTO Accounts(Email,Password,FirstName,LastName,City,State,Zip,Phone,Banned) VALUES ('ciczokvitz2@discuz.net','NTKT4Xmjo','Cheryl','Iczokvitz','Ashburn','VA','22093','571-387-3235',1);

@@ -1,3 +1,4 @@
+USE cargocache;
 INSERT INTO Attributes(Name,Description) VALUES ('Horror|Thriller|Western','Hx-lymphatic malign NEC');
 INSERT INTO Attributes(Name,Description) VALUES ('Drama|Crime','Otalgia NOS');
 INSERT INTO Attributes(Name,Description) VALUES ('Comedy|Crime|Mystery','Multiple contusion leg');
