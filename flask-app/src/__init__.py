@@ -3,6 +3,21 @@
 from flask import Flask, jsonify, make_response
 from flaskext.mysql import MySQL
 
+
+def _run_and_respond(query):
+    """Runs the given SQL against the database, returning the JSON-ified results"""
+    cursor = db.get_db().cursor()
+    cursor.execute(query)
+    row_headers = [desc[0] for desc in cursor.description]
+    json_list = []
+    data = cursor.fetchall()
+    for row in data:
+        json_list.append(dict(zip(row_headers, row)))
+    response = make_response(jsonify(json_list))
+    response.status_code = 200
+    response.mimetype = "application/json"
+    return response
+
 # Import the various routes (Blueprints)
 from src.sellers import sellers
 from src.moderators import moderators
@@ -46,18 +61,3 @@ def create_app():
     # app.register_blueprint(products, url_prefix="/p")
 
     return app
-
-
-def _run_and_respond(query):
-    """Runs the given SQL against the database, returning the JSON-ified results"""
-    cursor = db.get_db().cursor()
-    cursor.execute(query)
-    row_headers = [desc[0] for desc in cursor.description]
-    json_list = []
-    data = cursor.fetchall()
-    for row in data:
-        json_list.append(dict(zip(row_headers, row)))
-    response = make_response(jsonify(json_list))
-    response.status_code = 200
-    response.mimetype = "application/json"
-    return response
