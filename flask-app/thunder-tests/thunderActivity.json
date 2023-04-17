@@ -8,7 +8,21 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2023-04-17T02:56:17.557Z",
-    "modified": "2023-04-17T02:56:17.557Z",
+    "modified": "2023-04-17T03:09:59.954Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "f87709a7-910a-4aec-9f18-4e334a7dd0fc",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:8001/s/listings/1",
+    "url": "localhost:8001/s/listings/1",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-04-17T03:10:15.710Z",
+    "modified": "2023-04-17T03:10:15.710Z",
     "headers": [],
     "params": [],
     "tests": []
