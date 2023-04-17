@@ -3,14 +3,17 @@ from src import db
 
 
 def _run_and_respond(query):
-    """Runs the given SQL against the database, returning the JSON-ified results"""
+    """Helper Method:
+    Runs the given SQL against the database, returning the JSON-ified results"""
     cursor = db.get_db().cursor()
     cursor.execute(query)
-    row_headers = [desc[0] for desc in cursor.description]
     json_list = []
-    data = cursor.fetchall()
-    for row in data:
-        json_list.append(dict(zip(row_headers, row)))
+    # Post doesn't return any data -> desc field is null
+    if cursor.description:
+        row_headers = [desc[0] for desc in cursor.description]
+        data = cursor.fetchall()
+        for row in data:
+            json_list.append(dict(zip(row_headers, row)))
     response = make_response(jsonify(json_list))
     response.status_code = 200
     response.mimetype = "application/json"
@@ -21,7 +24,9 @@ moderators = Blueprint("moderators", __name__)
 @moderators.route("/users", methods=["GET"])
 def get_users():
     """Gets all the users accounts"""
-    return _run_and_respond("SELECT Email, FirstName, LastName, City, State, Zip, Phone, Banned FROM Accounts;")
+    # NOTE: if you get field `Banned` the flask function `jsonify` (above) doesn't know how to decode a 1/0 into True/False and usually errors out
+    # Probably could be fixed but eh
+    return _run_and_respond("SELECT Email, FirstName, LastName, City, State, Zip, Phone FROM Accounts;")
 
 @moderators.route("/rentees", methods=["GET"])
 def get_rentees():
@@ -37,14 +42,14 @@ def get_renters():
 def ban_user(email):
     """Bans the user's account"""
     return _run_and_respond(
-        f"UPDATE Accounts SET Banned = 1 WHERE Email = {email};"
+        f"UPDATE Accounts SET Banned = 1 WHERE Email = '{email}';"
     )
 
 @moderators.route("/users/unban/<email>", methods=["PUT"])
 def unban_user(email):
     """Unbans the user's account"""
     return _run_and_respond(
-        f"UPDATE Accounts SET Banned = 0 WHERE Email = {email};"
+        f"UPDATE Accounts SET Banned = 0 WHERE Email = '{email}';"
     )
 
 @moderators.route("/users/<email>", methods=["GET"])
@@ -53,7 +58,7 @@ def get_user(email):
     return _run_and_respond(
         f"""
         SELECT Email, FirstName, LastName, City, State, Zip, Phone, Banned, CreditCardNumber, ExpiryDate, BankName, AccountName
-        FROM ((SELECT * FROM Accounts WHERE Email = {email}) AC
+        FROM ((SELECT * FROM Accounts WHERE Email = '{email}') AC
         LEFT JOIN Rentees ON AC.Email = Rentees.AccountEmail)
         LEFT JOIN Renters ON AC.Email = Renters.AccountEmail;
         """
