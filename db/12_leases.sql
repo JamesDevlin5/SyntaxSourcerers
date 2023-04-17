@@ -1,3 +1,4 @@
+USE cargocache;
 INSERT INTO Leases(UnitID,AccountEmail,TermsID) VALUES (402,'dmcmurty46@google.de',410);
 INSERT INTO Leases(UnitID,AccountEmail,TermsID) VALUES (138,'emardling1@seesaa.net',694);
 INSERT INTO Leases(UnitID,AccountEmail,TermsID) VALUES (565,'tdjokicj2@europa.eu',458);

@@ -1,6 +1,22 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, jsonify, make_response
+from src import db
 
-from src import _run_and_respond
+
+def _run_and_respond(query):
+    """Runs the given SQL against the database, returning the JSON-ified results"""
+    cursor = db.get_db().cursor()
+    cursor.execute(query)
+    json_list = []
+    if cursor.description:
+        row_headers = [desc[0] for desc in cursor.description]
+        data = cursor.fetchall()
+        for row in data:
+            json_list.append(dict(zip(row_headers, row)))
+    response = make_response(jsonify(json_list))
+    response.status_code = 200
+    response.mimetype = "application/json"
+    return response
+
 
 sellers = Blueprint("sellers", __name__)
 
@@ -10,7 +26,7 @@ def get_listings(email):
     """Gets all the unit listings associated with the owner's Email"""
     # NOTE: offer choice to select a specific unit from this list
     return _run_and_respond(
-        f"SELECT * FROM Units WHERE PrimaryAccountEmail = {email};"
+        f"SELECT * FROM Units WHERE PrimaryAccountEmail = '{email}';"
     )
 
 
@@ -43,7 +59,7 @@ def get_unit_listing(unitID):
     return _run_and_respond(f"SELECT * FROM Units WHERE UnitID = {unitID};")
 
 
-@sellers.route("/listings/<int:unitID>", methods=["PUT"])
+@sellers.route("/listings/<int:unitID>/price", methods=["PUT"])
 def set_unit_price(unitID):
     """Change the price for the specific unit
 
@@ -54,7 +70,7 @@ def set_unit_price(unitID):
     )
 
 
-@sellers.route("/listings/<int:unitID>", methods=["PUT"])
+@sellers.route("/listings/<int:unitID>/size", methods=["PUT"])
 def set_unit_size(unitID):
     """Change the size (in square ft, with 3 decimal points) for the specific unit
 
