@@ -1,10 +1,9 @@
 [
   {
-    "_id": "9ba952ff-523c-4c1d-a433-f84198139574",
-    "colName": "test",
-    "created": "2023-04-17T02:56:01.145Z",
-    "sortNum": 10000,
-    "folders": [],
-    "settings": {}
+    "_id": "b9d82398-9dee-491e-93b1-33a9208e1081",
+    "colName": "Sellers",
+    "created": "2023-04-17T16:20:59.638Z",
+    "sortNum": 20000,
+    "folders": []
   }
 ]
