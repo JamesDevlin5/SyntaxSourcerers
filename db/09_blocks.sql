@@ -1,3 +1,4 @@
+USE cargocache;
 INSERT INTO Blocks(AccountEmail,BlockedEmail) VALUES ('dsouster66@springer.com','talbinson5a@diigo.com');
 INSERT INTO Blocks(AccountEmail,BlockedEmail) VALUES ('jhustingsah@weebly.com','adaviddiem@google.pl');
 INSERT INTO Blocks(AccountEmail,BlockedEmail) VALUES ('jswayteqb@marketwatch.com','wbannisterdw@cmu.edu');

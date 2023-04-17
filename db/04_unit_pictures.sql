@@ -1,3 +1,4 @@
+USE cargocache;
 INSERT INTO UnitPictures(UnitID) VALUES (297);
 INSERT INTO UnitPictures(UnitID) VALUES (884);
 INSERT INTO UnitPictures(UnitID) VALUES (205);

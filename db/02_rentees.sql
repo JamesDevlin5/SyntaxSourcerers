@@ -1,3 +1,4 @@
+USE cargocache;
 INSERT INTO Rentees(AccountEmail,BankName,AccountNumber,AccountName) VALUES ('rspancock0@slate.com','Roberts, Lueilwitz and Wilkinson','14-481-7288','Liè');
 INSERT INTO Rentees(AccountEmail,BankName,AccountNumber,AccountName) VALUES ('ematushevich1@tinyurl.com','Bechtelar Inc','12-044-8749','Cloé');
 INSERT INTO Rentees(AccountEmail,BankName,AccountNumber,AccountName) VALUES ('ciczokvitz2@discuz.net','Zemlak Group','12-995-9105','Bérengère');
