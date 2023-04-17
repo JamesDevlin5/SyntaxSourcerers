@@ -1,30 +1,7 @@
 # Some set up for the application
 
-from flask import Flask, jsonify, make_response
+from flask import Flask
 from flaskext.mysql import MySQL
-
-
-def _run_and_respond(query):
-    """Runs the given SQL against the database, returning the JSON-ified results"""
-    cursor = db.get_db().cursor()
-    cursor.execute(query)
-    row_headers = [desc[0] for desc in cursor.description]
-    json_list = []
-    data = cursor.fetchall()
-    for row in data:
-        json_list.append(dict(zip(row_headers, row)))
-    response = make_response(jsonify(json_list))
-    response.status_code = 200
-    response.mimetype = "application/json"
-    return response
-
-# Import the various routes (Blueprints)
-from src.sellers import sellers
-from src.moderators import moderators
-from src.views import views
-
-# from src.customers.customers import customers
-# from src.products.products  import products
 
 # create a MySQL object that we will use in other parts of the API
 db = MySQL()
@@ -52,6 +29,13 @@ def create_app():
     @app.route("/")
     def welcome():
         return "<h1>Welcome to the sickest website ever</h1>"
+
+    # Import the various routes (Blueprints)
+    # from src.customers.customers import customers
+    # from src.products.products  import products
+    from src.sellers import sellers
+    from src.moderators import moderators
+    from src.views import views
 
     # Register the routes that we just imported so they can be properly handled
     app.register_blueprint(views, url_prefix="/v")

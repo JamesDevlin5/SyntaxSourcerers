@@ -1,6 +1,20 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, jsonify, make_response
+from src import db
 
-from src import _run_and_respond
+
+def _run_and_respond(query):
+    """Runs the given SQL against the database, returning the JSON-ified results"""
+    cursor = db.get_db().cursor()
+    cursor.execute(query)
+    row_headers = [desc[0] for desc in cursor.description]
+    json_list = []
+    data = cursor.fetchall()
+    for row in data:
+        json_list.append(dict(zip(row_headers, row)))
+    response = make_response(jsonify(json_list))
+    response.status_code = 200
+    response.mimetype = "application/json"
+    return response
 
 moderators = Blueprint("moderators", __name__)
 
