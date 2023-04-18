@@ -4,7 +4,8 @@ from flask import Flask
 from flaskext.mysql import MySQL
 
 # create a MySQL object that we will use in other parts of the API
-db = MySQL()
+# NOTE: autocommit makes the DDL work
+db = MySQL(autocommit = True)
 
 
 def create_app():
