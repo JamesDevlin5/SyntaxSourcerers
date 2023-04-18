@@ -40,5 +40,179 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "2c44899b-01f1-4e99-bb36-8b8a366ac59b",
+    "colId": "52d0104b-fb7a-431b-bae6-46cf64a8b3f0",
+    "containerId": "",
+    "name": "Get All Users",
+    "url": "localhost:8001/m/users",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2023-04-18T19:43:37.273Z",
+    "modified": "2023-04-18T19:43:37.273Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "65c4e531-c20d-4649-9db8-622b9ec8e314",
+    "colId": "52d0104b-fb7a-431b-bae6-46cf64a8b3f0",
+    "containerId": "",
+    "name": "Get All Rentees",
+    "url": "localhost:8001/m/rentees",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2023-04-18T19:44:17.129Z",
+    "modified": "2023-04-18T19:44:17.129Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "aeb4baa9-abbf-4341-bcb3-b7083444cf2b",
+    "colId": "52d0104b-fb7a-431b-bae6-46cf64a8b3f0",
+    "containerId": "",
+    "name": "Get All Renters",
+    "url": "localhost:8001/m/renters",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2023-04-18T19:46:58.851Z",
+    "modified": "2023-04-18T19:46:58.851Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "aa0a7e73-a253-44a1-8d58-4f1f967e55b8",
+    "colId": "52d0104b-fb7a-431b-bae6-46cf64a8b3f0",
+    "containerId": "",
+    "name": "Ban aalbone5t@ebay.co.uk",
+    "url": "localhost:8001/m/users/ban/aalbone5t@ebay.co.uk",
+    "method": "PUT",
+    "sortNum": 40000,
+    "created": "2023-04-18T19:48:16.347Z",
+    "modified": "2023-04-18T19:48:16.347Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "a6940311-8657-426d-a9d8-7dea1534746c",
+    "colId": "52d0104b-fb7a-431b-bae6-46cf64a8b3f0",
+    "containerId": "",
+    "name": "Ban aaskaw2c@nih.gov",
+    "url": "localhost:8001/m/users/ban/aaskaw2c@nih.gov",
+    "method": "PUT",
+    "sortNum": 50000,
+    "created": "2023-04-18T19:50:01.680Z",
+    "modified": "2023-04-18T19:50:01.680Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "16e3dd11-37aa-40b9-ae66-5afdbc199ca7",
+    "colId": "52d0104b-fb7a-431b-bae6-46cf64a8b3f0",
+    "containerId": "",
+    "name": "Unban abalam7z@buzzfeed.com",
+    "url": "localhost:8001/m/users/unban/abalam7z@buzzfeed.com",
+    "method": "PUT",
+    "sortNum": 60000,
+    "created": "2023-04-18T19:51:42.635Z",
+    "modified": "2023-04-18T19:51:42.635Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "3f738c2c-f485-4cec-882f-750625d76916",
+    "colId": "52d0104b-fb7a-431b-bae6-46cf64a8b3f0",
+    "containerId": "",
+    "name": "Unban abarden8q@list-manage.com",
+    "url": "localhost:8001/m/users/unban/abarden8q@list-manage.com",
+    "method": "PUT",
+    "sortNum": 70000,
+    "created": "2023-04-18T19:51:53.053Z",
+    "modified": "2023-04-18T19:51:53.053Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "675f5843-5415-469f-8e8b-9a499077bad6",
+    "colId": "52d0104b-fb7a-431b-bae6-46cf64a8b3f0",
+    "containerId": "",
+    "name": "Get User Details of abalam7z@buzzfeed.com",
+    "url": "localhost:8001/m/users/abalam7z@buzzfeed.com",
+    "method": "GET",
+    "sortNum": 80000,
+    "created": "2023-04-18T19:53:01.137Z",
+    "modified": "2023-04-18T19:53:01.137Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "b322ffb2-0e6c-4fb7-a44f-7775985b53ce",
+    "colId": "52d0104b-fb7a-431b-bae6-46cf64a8b3f0",
+    "containerId": "",
+    "name": "Get User Details of aalbone5t@ebay.co.uk",
+    "url": "localhost:8001/m/users/aalbone5t@ebay.co.uk",
+    "method": "GET",
+    "sortNum": 90000,
+    "created": "2023-04-18T19:53:52.115Z",
+    "modified": "2023-04-18T19:53:52.115Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "5ad5c995-540e-4017-8c16-540d87029aa7",
+    "colId": "52d0104b-fb7a-431b-bae6-46cf64a8b3f0",
+    "containerId": "",
+    "name": "Create New User Zachary Maizes (aaardvark@gmail.com)",
+    "url": "localhost:8001/m/users/aaardvark@gmail.com",
+    "method": "POST",
+    "sortNum": 100000,
+    "created": "2023-04-18T19:56:00.921Z",
+    "modified": "2023-04-18T19:56:00.921Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "formencoded",
+      "raw": "",
+      "form": [
+        {
+          "name": "password",
+          "value": "pass"
+        },
+        {
+          "name": "firstName",
+          "value": "Zachary"
+        },
+        {
+          "name": "lastName",
+          "value": "Maizes"
+        },
+        {
+          "name": "city",
+          "value": "Boston"
+        },
+        {
+          "name": "state",
+          "value": "MA"
+        },
+        {
+          "name": "zip",
+          "value": "02115"
+        },
+        {
+          "name": "phone",
+          "value": "1234567890"
+        }
+      ]
+    },
+    "tests": []
   }
 ]
