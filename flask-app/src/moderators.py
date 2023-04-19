@@ -77,32 +77,7 @@ def delete_listing(unitID):
         f"""DELETE FROM Units WHERE UnitID = '{unitID}';
         """
     )
-@moderators.route("/users/<accountEmail>", methods=["PUT"])
-def update_user_account(email):
-    """Updates a user's account information"""
 
-    form = request.form
-    password = form.get("password", None)
-    firstName = form.get("firstName", None)
-    lastName = form.get("lastName", None)
-    city = form.get("city", None)
-    state = form.get("state", None)
-    zipcode = form.get("zip", None)
-    phone = form.get("phone", None)
-    return _run_and_respond(
-        f"""
-        UPDATE Accounts 
-SET 
-  Password = CASE WHEN '{password}' IS NOT NULL THEN '{password}' ELSE Password END,
-  FirstName = CASE WHEN '{firstName}' IS NOT NULL THEN '{firstName}' ELSE FirstName END,
-  LastName = CASE WHEN {lastName} IS NOT NULL THEN {lastName} ELSE LastName END,
-  City = CASE WHEN '{city}' IS NOT NULL THEN '{city}' ELSE City END,
-  State = CASE WHEN '{state}' IS NOT NULL THEN '{state}' ELSE State END,
-  Phone = CASE WHEN '{phone}' IS NOT NULL THEN '{phone}' ELSE Phone END,
-  Zip =  CASE WHEN '{zipcode}' IS NOT NULL THEN '{zipcode}' ELSE Zip END,
-WHERE Email = '{email}';
-        """
-    )
 @moderators.route("/users/<email>", methods=["POST"])
 def new_test_user(email):
     """Creates a new test user"""
