@@ -81,6 +81,7 @@ def delete_listing(unitID):
 def new_test_user(email):
     """Updates a user's account information"""
     # NOTE: currently, all optional fields are required
+    # Fields need to be of the form: `NULL` or `'value'` (quotes)
     form = request.form
     if "password" in form:
         password = "'" + form["password"] + "'"
