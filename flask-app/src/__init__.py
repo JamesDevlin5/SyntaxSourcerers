@@ -4,7 +4,8 @@ from flask import Flask
 from flaskext.mysql import MySQL
 
 # create a MySQL object that we will use in other parts of the API
-db = MySQL()
+# NOTE: autocommit makes the DDL work
+db = MySQL(autocommit = True)
 
 
 def create_app():
@@ -17,7 +18,7 @@ def create_app():
 
     # these are for the DB object to be able to connect to MySQL.
     app.config["MYSQL_DATABASE_USER"] = "root"
-    app.config["MYSQL_DATABASE_PASSWORD"] = "pass"
+    app.config["MYSQL_DATABASE_PASSWORD"] = open("/secrets/db_root_password.txt").readline()
     app.config["MYSQL_DATABASE_HOST"] = "db"
     app.config["MYSQL_DATABASE_PORT"] = 3306
     app.config["MYSQL_DATABASE_DB"] = "cargocache"

@@ -26,17 +26,17 @@ def get_users():
     """Gets all the users accounts"""
     # NOTE: if you get field `Banned` the flask function `jsonify` (above) doesn't know how to decode a 1/0 into True/False and usually errors out
     # Probably could be fixed but eh
-    return _run_and_respond("SELECT Email, FirstName, LastName, City, State, Zip, Phone FROM Accounts;")
+    return _run_and_respond("SELECT Email, FirstName, LastName, City, State, Zip, Phone, Banned = 1 AS isBanned FROM Accounts;")
 
 @moderators.route("/rentees", methods=["GET"])
 def get_rentees():
     """Gets all the Rentee users accounts"""
-    return _run_and_respond("SELECT Email, FirstName, LastName, City, State, Zip, Phone FROM Accounts JOIN Rentees ON Accounts.Email = Rentees.AccountEmail;")
+    return _run_and_respond("SELECT Email, FirstName, LastName, City, State, Zip, Phone, Banned = 1 AS isBanned FROM Accounts JOIN Rentees ON Accounts.Email = Rentees.AccountEmail;")
 
 @moderators.route("/renters", methods=["GET"])
 def get_renters():
     """Gets all the Renter users accounts"""
-    return _run_and_respond("SELECT Email, FirstName, LastName, City, State, Zip, Phone FROM Accounts JOIN Renters ON Accounts.Email = Renters.AccountEmail;")
+    return _run_and_respond("SELECT Email, FirstName, LastName, City, State, Zip, Phone, Banned = 1 AS isBanned FROM Accounts JOIN Renters ON Accounts.Email = Renters.AccountEmail;")
 
 @moderators.route("/users/ban/<email>", methods=["PUT"])
 def ban_user(email):
@@ -57,7 +57,7 @@ def get_user(email):
     """Gets the details of a user's account"""
     return _run_and_respond(
         f"""
-        SELECT Email, FirstName, LastName, City, State, Zip, Phone, CreditCardNumber, ExpiryDate, BankName, AccountName
+        SELECT Email, FirstName, LastName, City, State, Zip, Phone, Banned = 1 AS isBanned, CreditCardNumber, ExpiryDate, BankName, AccountName
         FROM ((SELECT * FROM Accounts WHERE Email = '{email}') AC
         LEFT JOIN Rentees ON AC.Email = Rentees.AccountEmail)
         LEFT JOIN Renters ON AC.Email = Renters.AccountEmail;
