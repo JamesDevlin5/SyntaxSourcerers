@@ -21,7 +21,7 @@ CREATE TABLE Accounts
     State     CHAR(2)             NOT NULL,
     Zip       CHAR(5)             NOT NULL,
     Phone     VARCHAR(12)         NOT NULL,
-    Banned    BIT,
+    Banned    BIT                 NOT NULL DEFAULT 1,
     PRIMARY KEY (Email)
 );
 
@@ -32,7 +32,7 @@ CREATE TABLE Rentees
     AccountNumber VARCHAR(20)         NOT NULL,
     AccountName   VARCHAR(40)         NOT NULL,
     PRIMARY KEY (AccountEmail),
-    CONSTRAINT fk_rentees_accounts FOREIGN KEY (AccountEmail) REFERENCES Accounts (Email) ON DELETE RESTRICT ON UPDATE CASCADE
+    CONSTRAINT fk_rentees_accounts FOREIGN KEY (AccountEmail) REFERENCES Accounts (Email) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Units
@@ -98,7 +98,7 @@ CREATE TABLE Renters
     CreditCardInfo   VARCHAR(10)  NOT NULL,
     ExpiryDate       DATE         NOT NULL,
     PRIMARY KEY (AccountEmail),
-    CONSTRAINT fk_renters_accounts FOREIGN KEY (AccountEmail) REFERENCES Accounts (Email) ON DELETE RESTRICT ON UPDATE CASCADE
+    CONSTRAINT fk_renters_accounts FOREIGN KEY (AccountEmail) REFERENCES Accounts (Email) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Blocks
