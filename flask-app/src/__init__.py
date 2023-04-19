@@ -39,7 +39,7 @@ def create_app():
     from src.views import views
 
     # Register the routes that we just imported so they can be properly handled
-    app.register_blueprint(views, url_prefix="/v")
+    # app.register_blueprint(views, url_prefix="/v")
     app.register_blueprint(sellers, url_prefix="/s")
     app.register_blueprint(moderators, url_prefix="/m")
     # app.register_blueprint(customers, url_prefix="/c")
