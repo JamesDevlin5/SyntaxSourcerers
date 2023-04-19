@@ -71,7 +71,7 @@ CREATE TABLE CoRenteeUnits
     UnitID       INT          NOT NULL,
     AccountEmail VARCHAR(100) NOT NULL,
     PRIMARY KEY (UnitID, AccountEmail),
-    CONSTRAINT fk_corenteeunits_units FOREIGN KEY (UnitID) REFERENCES Units (UnitID) ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT fk_corenteeunits_units FOREIGN KEY (UnitID) REFERENCES Units (UnitID) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT fk_corenteeunits_rentees FOREIGN KEY (AccountEmail) REFERENCES Rentees (AccountEmail) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
@@ -133,7 +133,6 @@ CREATE TABLE Leases
     AccountEmail VARCHAR(100) NOT NULL,
     TermsID      INT          NOT NULL,
     PRIMARY KEY (UnitID, AccountEmail, TermsID),
-    CONSTRAINT fk_leases_units FOREIGN KEY (UnitID) REFERENCES Units (UnitID) ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT fk_leases_renters FOREIGN KEY (AccountEmail) REFERENCES Renters (AccountEmail) ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT fk_leases_terms FOREIGN KEY (TermsID) REFERENCES Terms (TermsID) ON DELETE RESTRICT ON UPDATE CASCADE
 );
