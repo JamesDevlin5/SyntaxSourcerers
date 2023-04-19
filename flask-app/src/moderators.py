@@ -127,7 +127,7 @@ def delete_listing(unitID):
 #         """
 #     )
 
-@moderators.route("/users/<email>", methods=["PUT"])
+@moderators.route("/users/<email>", methods=["POST"])
 def new_test_user(email):
     """Creates a new test user"""
     # NOTE: currently, all optional fields are required
