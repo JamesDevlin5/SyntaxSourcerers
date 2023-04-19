@@ -77,57 +77,57 @@ def delete_listing(unitID):
     return _run_and_respond(
         f"DELETE FROM Units WHERE UnitID = {unitID};"
     )
-@moderators.route("/users/<accountEmail>", methods=["PUT"])
-def new_test_user(email):
-    """Updates a user's account information"""
-    # NOTE: currently, all optional fields are required
-    # Fields need to be of the form: `NULL` or `'value'` (quotes)
-    form = request.form
-    if "password" in form:
-        password = "'" + form["password"] + "'"
-    else:
-        password = "NULL"
-    if "firstName" in form:
-        firstName = "'" + form["firstName"] + "'"
-    else:
-        firstName = "NULL"
-    if "lastName" in form:
-        lastName = "'" + form["lastName"] + "'"
-    else:
-        lastName = "NULL"
-    if "city" in form:
-        city = "'" + form["city"] + "'"
-    else:
-        city = "NULL"
-    if "state" in form:
-        state = "'" + form["state"] + "'"
-    else:
-        state = "NULL"
-    if "zip" in form:
-        zipcode = "'" + form["zip"] + "'"
-    else:
-        zipcode = "NULL"
-    if "phone" in form:
-        phone = "'" + form["phone"] + "'"
-    else:
-        phone = "NULL"
+# @moderators.route("/users/<accountEmail>", methods=["PUT"])
+# def new_test_user(email):
+#     """Updates a user's account information"""
+#     # NOTE: currently, all optional fields are required
+#     # Fields need to be of the form: `NULL` or `'value'` (quotes)
+#     form = request.form
+#     if "password" in form:
+#         password = "'" + form["password"] + "'"
+#     else:
+#         password = "NULL"
+#     if "firstName" in form:
+#         firstName = "'" + form["firstName"] + "'"
+#     else:
+#         firstName = "NULL"
+#     if "lastName" in form:
+#         lastName = "'" + form["lastName"] + "'"
+#     else:
+#         lastName = "NULL"
+#     if "city" in form:
+#         city = "'" + form["city"] + "'"
+#     else:
+#         city = "NULL"
+#     if "state" in form:
+#         state = "'" + form["state"] + "'"
+#     else:
+#         state = "NULL"
+#     if "zip" in form:
+#         zipcode = "'" + form["zip"] + "'"
+#     else:
+#         zipcode = "NULL"
+#     if "phone" in form:
+#         phone = "'" + form["phone"] + "'"
+#     else:
+#         phone = "NULL"
 
-    return _run_and_respond(
-        f"""
-        UPDATE Accounts 
-        SET 
-            Password = CASE WHEN {password} IS NOT NULL THEN {password} ELSE Password END,
-            FirstName = CASE WHEN {firstName} IS NOT NULL THEN {firstName} ELSE FirstName END,
-            LastName = CASE WHEN {lastName} IS NOT NULL THEN {lastName} ELSE LastName END,
-            City = CASE WHEN {city} IS NOT NULL THEN {city} ELSE City END,
-            State = CASE WHEN {state} IS NOT NULL THEN {state} ELSE State END,
-            Phone = CASE WHEN {phone} IS NOT NULL THEN {phone} ELSE Phone END,
-            Zip =  CASE WHEN {zipcode} IS NOT NULL THEN {zipcode} ELSE Zip END,
-        WHERE Email = {email};
-        """
-    )
+#     return _run_and_respond(
+#         f"""
+#         UPDATE Accounts 
+#         SET 
+#             Password = CASE WHEN {password} IS NOT NULL THEN {password} ELSE Password END,
+#             FirstName = CASE WHEN {firstName} IS NOT NULL THEN {firstName} ELSE FirstName END,
+#             LastName = CASE WHEN {lastName} IS NOT NULL THEN {lastName} ELSE LastName END,
+#             City = CASE WHEN {city} IS NOT NULL THEN {city} ELSE City END,
+#             State = CASE WHEN {state} IS NOT NULL THEN {state} ELSE State END,
+#             Phone = CASE WHEN {phone} IS NOT NULL THEN {phone} ELSE Phone END,
+#             Zip =  CASE WHEN {zipcode} IS NOT NULL THEN {zipcode} ELSE Zip END,
+#         WHERE Email = {email};
+#         """
+#     )
 
-@moderators.route("/users/<email>", methods=["POST"])
+@moderators.route("/users/<email>", methods=["PUT"])
 def new_test_user(email):
     """Creates a new test user"""
     # NOTE: currently, all optional fields are required
