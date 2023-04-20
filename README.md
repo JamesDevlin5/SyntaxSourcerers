@@ -1,7 +1,6 @@
 # The Campus Cache
 
-TODO: link to video showing usage
-
+[Demo Video](https://youtu.be/v5tOebeBJQY)
 
 This repo contains our full-stack application, composed of three Docker containers:
 
@@ -34,4 +33,3 @@ host repository,
 [github.com/JamesDevlin5/CargoCache](https://github.com/JamesDevlin5/CargoCache).
 
 Next, check out our [pages](#table-of-contents).
-
