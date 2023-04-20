@@ -31,9 +31,6 @@ INSERT INTO Rentees(AccountEmail,BankName,AccountNumber,AccountName) VALUES ('ld
 INSERT INTO Rentees(AccountEmail,BankName,AccountNumber,AccountName) VALUES ('bstembridget@foxnews.com','Predovic-Dietrich','37-464-2138','Kù');
 INSERT INTO Rentees(AccountEmail,BankName,AccountNumber,AccountName) VALUES ('rgrancheru@cafepress.com','Douglas Inc','69-593-0654','Cécilia');
 INSERT INTO Rentees(AccountEmail,BankName,AccountNumber,AccountName) VALUES ('cgayev@godaddy.com','Schowalter, Considine and Hettinger','02-132-6493','Adèle');
-INSERT INTO Rentees(AccountEmail,BankName,AccountNumber,AccountName) VALUES ('fkloskaw@photobucket.com','Tremblay-Swaniawski','02-267-1270','Personnalisée');
-INSERT INTO Rentees(AccountEmail,BankName,AccountNumber,AccountName) VALUES ('msmothx@dion.ne.jp','Shields-Donnelly','82-080-0526','Mélissandre');
-INSERT INTO Rentees(AccountEmail,BankName,AccountNumber,AccountName) VALUES ('astoppey@yellowpages.com','West and Sons','50-922-5077','Annotée');
 INSERT INTO Rentees(AccountEmail,BankName,AccountNumber,AccountName) VALUES ('cstclairz@gnu.org','Mills Inc','04-870-5039','Ráo');
 INSERT INTO Rentees(AccountEmail,BankName,AccountNumber,AccountName) VALUES ('rvonhagt10@wired.com','Macejkovic, Considine and Schimmel','97-475-6132','Gwenaëlle');
 INSERT INTO Rentees(AccountEmail,BankName,AccountNumber,AccountName) VALUES ('fpirie11@so-net.ne.jp','Shanahan, Hane and Spinka','64-523-9749','Laïla');

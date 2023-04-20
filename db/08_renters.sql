@@ -23,9 +23,6 @@ INSERT INTO Renters(AccountEmail,CreditCardNumber,CreditCardInfo,ExpiryDate) VAL
 INSERT INTO Renters(AccountEmail,CreditCardNumber,CreditCardInfo,ExpiryDate) VALUES ('rsmalridgel@jiathis.com','5048372391068851',108,'2024-08-03');
 INSERT INTO Renters(AccountEmail,CreditCardNumber,CreditCardInfo,ExpiryDate) VALUES ('rhardwinm@twitpic.com','5108754662212259',968,'2024-03-26');
 INSERT INTO Renters(AccountEmail,CreditCardNumber,CreditCardInfo,ExpiryDate) VALUES ('hbothamn@deliciousdays.com','5108757415740286',364,'2028-05-02');
-INSERT INTO Renters(AccountEmail,CreditCardNumber,CreditCardInfo,ExpiryDate) VALUES ('hpatersono@sbwire.com','5048371987427091',550,'2024-09-29');
-INSERT INTO Renters(AccountEmail,CreditCardNumber,CreditCardInfo,ExpiryDate) VALUES ('dkalinskyp@baidu.com','5048379847182194',539,'2024-10-25');
-INSERT INTO Renters(AccountEmail,CreditCardNumber,CreditCardInfo,ExpiryDate) VALUES ('jviallq@opensource.org','5108751980783557',429,'2027-07-26');
 INSERT INTO Renters(AccountEmail,CreditCardNumber,CreditCardInfo,ExpiryDate) VALUES ('ebingleyr@slate.com','5048370197576697',192,'2024-07-06');
 INSERT INTO Renters(AccountEmail,CreditCardNumber,CreditCardInfo,ExpiryDate) VALUES ('ldarkinss@theatlantic.com','5048371777556190',308,'2025-05-21');
 INSERT INTO Renters(AccountEmail,CreditCardNumber,CreditCardInfo,ExpiryDate) VALUES ('bstembridget@foxnews.com','5108755969752673',112,'2023-08-16');
