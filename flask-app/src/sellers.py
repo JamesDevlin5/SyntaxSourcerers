@@ -21,6 +21,10 @@ def _run_and_respond(query):
 
 sellers = Blueprint("sellers", __name__)
 
+@sellers.route("/listings/", methods=["GET"])
+def get_all_listings():
+    """Gets all listings in the db (first 30)"""
+    return _run_and_respond("SELECT * FROM Units LIMIT 30;")
 
 @sellers.route("/listings/<email>", methods=["GET"])
 def get_listings(email):
