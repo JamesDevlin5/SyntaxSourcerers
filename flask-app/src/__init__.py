@@ -36,7 +36,7 @@ def create_app():
     # from src.products.products  import products
     from src.sellers import sellers
     from src.moderators import moderators
-    from src.views import views
+    # from src.views import views
 
     # Register the routes that we just imported so they can be properly handled
     # app.register_blueprint(views, url_prefix="/v")
