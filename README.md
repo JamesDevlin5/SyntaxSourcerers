@@ -13,6 +13,8 @@ This repo contains our full-stack application, composed of three Docker containe
 
 1. [Sellers View](http://localhost:8080/app/cargocache/sellers-view-64380c5c6f5b18386224952c?branch=master)
 1. [Sellers Edit Listing](http://localhost:8080/app/cargocache/sellers-edit-listing-643ea7093371a824c91bfa4f/edit?branch=master&unitID=922)
+1. [Moderators Delete Listing](http://localhost:8080/app/cargocache/moderators-delete-listing-64419a182302193efa424348?branch=master)
+1. [View Moderators & Ban Users](http://localhost:8080/app/cargocache/view-moderators-ban-users-64419a182302193efa424349?branch=master)
 
 ## Overview
 
