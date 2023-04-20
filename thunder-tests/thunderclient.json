@@ -214,5 +214,47 @@
       ]
     },
     "tests": []
+  },
+  {
+    "_id": "5dfe9d6f-be84-492b-b8a1-fc61217312c9",
+    "colId": "52d0104b-fb7a-431b-bae6-46cf64a8b3f0",
+    "containerId": "",
+    "name": "Get ALL Moderators",
+    "url": "localhost:8001/m/moderators/",
+    "method": "GET",
+    "sortNum": 120000,
+    "created": "2023-04-20T14:31:44.760Z",
+    "modified": "2023-04-20T14:34:32.363Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "af8093b3-d6f4-46a3-9e89-ecc96ee4632c",
+    "colId": "52d0104b-fb7a-431b-bae6-46cf64a8b3f0",
+    "containerId": "",
+    "name": "Delete Unit",
+    "url": "localhost:8001/m/units/1",
+    "method": "DELETE",
+    "sortNum": 130000,
+    "created": "2023-04-20T14:36:44.686Z",
+    "modified": "2023-04-20T14:37:00.839Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "451dfe3c-9ef8-4a73-aff2-7b01f1c244bd",
+    "colId": "52d0104b-fb7a-431b-bae6-46cf64a8b3f0",
+    "containerId": "",
+    "name": "Delete Unit 2",
+    "url": "localhost:8001/m/units/1",
+    "method": "DELETE",
+    "sortNum": 140000,
+    "created": "2023-04-20T14:37:08.648Z",
+    "modified": "2023-04-20T14:37:08.648Z",
+    "headers": [],
+    "params": [],
+    "tests": []
   }
 ]

@@ -63,9 +63,27 @@ def get_user(email):
         LEFT JOIN Renters ON AC.Email = Renters.AccountEmail;
         """
     )
+@moderators.route("/moderators/", methods=["GET"])
+def get_moderators():
+    """Gets the moderators accounts"""
+    return _run_and_respond(
+        f"""
+        SELECT Email, FirstName, LastName, City, State, Zip, Phone, Banned = 1 AS isBanned
+        FROM Accounts
+        WHERE Email NOT IN (SELECT AccountEmail FROM Renters)
+        AND Email NOT IN (SELECT AccountEmail FROM Rentees);
+        """
+    )
+@moderators.route("/units", methods=["GET"])
+def get_all_listing():
+    """Retrieves all unit listings"""
+    return _run_and_respond(
+        f"""SELECT * FROM Units ;
+        """
+    )
 @moderators.route("/units/<unitID>", methods=["GET"])
 def get_listing(unitID):
-    """Permanently deletes an unit listing"""
+    """Retrieves an unit listing"""
     return _run_and_respond(
         f"""SELECT * FROM Units WHERE UnitID = '{unitID}';
         """
